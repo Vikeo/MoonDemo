@@ -81,9 +81,9 @@ scene.add(moon);
 
 moon.position.z = -10;
 moon.position.x = -10;
-moon.rotation.y = 200;
-moon.rotation.x = 200;
-moon.rotation.z = 100;
+moon.rotation.y = 100;
+moon.rotation.x = 100;
+moon.rotation.z = 500;
 
 //function moveCamera() {
 //const t = document.body.getBoundingClientRect().top;
