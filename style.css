@@ -7,6 +7,10 @@
   margin-top: 60px;
 }
 
+body {
+  background-color: black;
+}
+
 canvas {
   position: fixed;
   top: 0%;
