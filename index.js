@@ -7,7 +7,7 @@ import { OrbitControls } from "https://unpkg.com/three@0.127.0/examples/jsm/cont
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  75,
+  60,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -35,12 +35,12 @@ window.addEventListener("resize", () => {
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(3);
 
 renderer.render(scene, camera);
 
 const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
+pointLight.position.set(40, 20, 10);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight);
@@ -49,28 +49,48 @@ const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 //scene.add(lightHelper, gridHelper);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
+
+var starcount = 0;
 
 function addStar() {
-  const geometry = new THREE.SphereGeometry(0.015, 24, 24);
+  var radius = THREE.MathUtils.randFloat(0.0015, 0.009);
+
+  if (starcount < 100) {
+    radius = THREE.MathUtils.randFloat(0.015, 0.03);
+  }
+
+  // //3d-star
+  // const geometry = new THREE.SphereGeometry(radius, 8, 4);
+  // const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  // const star = new THREE.Mesh(geometry, material);
+
+  //Make "2d-star" object
+  const geometry = new THREE.CircleGeometry(radius, 8); //(radius, segments)
   const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   const star = new THREE.Mesh(geometry, material);
 
-  const [x, y, z] = Array(3)
-    .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(100));
+  // const [x, y, z] = Array(3)
+  //   .fill()
+  //   .map(() => THREE.MathUtils.randFloatSpread(100));
+
+  const x = THREE.MathUtils.randFloatSpread(50);
+  const y = THREE.MathUtils.randFloatSpread(25);
+  const z = THREE.MathUtils.randFloat(-12, -12);
 
   star.position.set(x, y, z);
   scene.add(star);
+  starcount++;
 }
 
-Array(500).fill().forEach(addStar);
+Array(2500).fill().forEach(addStar);
 
 const moonTexture = new THREE.TextureLoader().load("moon.jpg");
 const moonNormalTexture = new THREE.TextureLoader().load("moonnormal.jpg");
 
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(0.8, 32, 32),
   new THREE.MeshStandardMaterial({
     map: moonTexture,
     normalMap: moonNormalTexture,
@@ -79,8 +99,6 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = -10;
-moon.position.x = -10;
 moon.rotation.y = 100;
 moon.rotation.x = 100;
 moon.rotation.z = 500;
@@ -95,19 +113,21 @@ moon.rotation.z = 500;
 // camera.position.z = t * -0.0002;
 //}
 
-var t = 0;
+//const controls = new OrbitControls(camera, renderer.domElement);
+
+var t = 7.285;
 function animate() {
   requestAnimationFrame(animate);
-  t += 0.001;
+  t += 0.0005;
 
-  moon.position.x = -33 * Math.cos(t) + 0;
-  moon.position.z = -33 * Math.sin(t) + 0;
-  moon.position.y = -20 * Math.cos(t) + 0;
+  moon.position.x = -11 * Math.cos(t) + 0;
+  moon.position.z = -11 * Math.sin(t) + 0;
+  moon.position.y = -11 * Math.cos(t) + 0;
 
-  moon.rotation.y -= 0.001;
+  moon.rotation.y -= 0.0007;
   moon.rotation.x += 0.0005;
 
-  controls.update();
+  //controls.update();
 
   renderer.render(scene, camera);
 }
