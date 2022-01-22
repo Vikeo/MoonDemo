@@ -45,12 +45,13 @@ pointLight.position.set(40, 20, 10);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight);
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
-//scene.add(lightHelper, gridHelper);
-
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+//Helpers
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+// const gridHelper = new THREE.GridHelper(200, 50);
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
+// scene.add(lightHelper);
+// scene.add(gridHelper);
 
 var starcount = 0;
 
