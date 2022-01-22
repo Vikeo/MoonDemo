@@ -5,7 +5,10 @@ import { OrbitControls } from "https://unpkg.com/three@0.127.0/examples/jsm/cont
 // import { SplineCurve } from "three";
 // import { randFloatSpread } from "three/src/math/MathUtils";
 
+//Scene
 const scene = new THREE.Scene();
+
+//Camera
 const camera = new THREE.PerspectiveCamera(
   60,
   window.innerWidth / window.innerHeight,
@@ -13,10 +16,15 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
+//Renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 
+//Controls
+//const controls = new OrbitControls(camera, renderer.domElement);
+
+//Auto resize renderer
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
@@ -35,15 +43,10 @@ window.addEventListener("resize", () => {
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(3);
 
-renderer.render(scene, camera);
-
+//Lights
 const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(40, 20, 10);
-
 const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight);
 
 //Helpers
 // const lightHelper = new THREE.PointLightHelper(pointLight);
@@ -53,7 +56,51 @@ scene.add(pointLight);
 // scene.add(lightHelper);
 // scene.add(gridHelper);
 
+//Objects
 var starcount = 0;
+
+const moonTexture = new THREE.TextureLoader().load("moon.jpg");
+const moonNormalTexture = new THREE.TextureLoader().load("moonnormal.jpg");
+const moon = new THREE.Mesh(
+  new THREE.SphereGeometry(0.8, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: moonTexture,
+    normalMap: moonNormalTexture,
+  })
+);
+
+renderer.render(scene, camera);
+
+//Add objects
+Array(2500).fill().forEach(addStar);
+scene.add(moon);
+scene.add(pointLight);
+
+//Positions
+camera.position.setZ(3);
+pointLight.position.set(40, 20, 10);
+moon.rotation.y = 100;
+moon.rotation.x = 100;
+moon.rotation.z = 500;
+
+//Functions
+
+var t = 7.285;
+function animate() {
+  requestAnimationFrame(animate);
+  t += 0.0005;
+
+  moon.position.x = -11 * Math.cos(t) + 0;
+  moon.position.z = -11 * Math.sin(t) + 0;
+  moon.position.y = -11 * Math.cos(t) + 0;
+
+  moon.rotation.y -= 0.0007;
+  moon.rotation.x += 0.0005;
+
+  //controls.update();
+
+  renderer.render(scene, camera);
+}
 
 function addStar() {
   var radius = THREE.MathUtils.randFloat(0.0015, 0.009);
@@ -85,25 +132,6 @@ function addStar() {
   starcount++;
 }
 
-Array(2500).fill().forEach(addStar);
-
-const moonTexture = new THREE.TextureLoader().load("moon.jpg");
-const moonNormalTexture = new THREE.TextureLoader().load("moonnormal.jpg");
-
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(0.8, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: moonNormalTexture,
-  })
-);
-
-scene.add(moon);
-
-moon.rotation.y = 100;
-moon.rotation.x = 100;
-moon.rotation.z = 500;
-
 //function moveCamera() {
 //const t = document.body.getBoundingClientRect().top;
 // moon.rotation.x += 0.05;
@@ -113,24 +141,5 @@ moon.rotation.z = 500;
 // camera.position.y = t * -0.0002;
 // camera.position.z = t * -0.0002;
 //}
-
-//const controls = new OrbitControls(camera, renderer.domElement);
-
-var t = 7.285;
-function animate() {
-  requestAnimationFrame(animate);
-  t += 0.0005;
-
-  moon.position.x = -11 * Math.cos(t) + 0;
-  moon.position.z = -11 * Math.sin(t) + 0;
-  moon.position.y = -11 * Math.cos(t) + 0;
-
-  moon.rotation.y -= 0.0007;
-  moon.rotation.x += 0.0005;
-
-  //controls.update();
-
-  renderer.render(scene, camera);
-}
 
 animate();
