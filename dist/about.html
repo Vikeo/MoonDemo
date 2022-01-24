@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Viktor Moon</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -13,162 +15,145 @@
 
     <canvas id="bg"></canvas>
 
-    <!DOCTYPE html>
-    <html lang="en">
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-xxl">
+            <a href="index.html" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    Viktor Rådberg
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>Viktor Moon</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+            <!-- navbar links -->
 
-    <body>
-
-        <canvas id="bg"></canvas>
-
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container-xxl">
-                <a href="index.html" class="navbar-brand">
-                    <span class="fw-bold text-secondary">
-                        Viktor Rådberg
-                    </span>
-                </a>
-                <!-- toggle button for mobile nav -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- navbar links -->
-
-                <div class="collapse navbar-collapse justify-content-start align-center" id="main-nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">Om</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="achievements.html" class="nav-link">Framgångar</a>
-                        </li>
-                        <!-- Shows up in toggle button menu -->
-                        <li class="nav-item d-md-none">
-                            <a href="#kontaktform" class="nav-link">Kontakt</a>
-                        </li>
-                        <li class="nav-item dropdown d-md-none">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Språk
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
+            <div class="collapse navbar-collapse justify-content-start align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Om</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="achievements.html" class="nav-link">Framgångar</a>
+                    </li>
+                    <!-- Shows up in toggle button menu -->
+                    <li class="nav-item d-md-none">
+                        <a href="#kontaktform" class="nav-link">Kontakt</a>
+                    </li>
+                    <li class="nav-item dropdown d-md-none">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Språk
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
                                                         navbarDarkDropdownMenuLink" style="max-width:min-content;">
-                                <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
-                                <li><a class="dropdown-item" href="#english">English</a></li>
-                                <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="collapse navbar-collapse justify-content-end" id="main-nav">
-                    <ul class="navbar-nav">
-                        <!-- Doesn't show up in toggle button menu -->
-                        <li class="nav-item ms-2 d-none d-md-inline">
-                            <a href="#kontaktform" class="btn btn-secondary">Kontakt</a>
-                        </li>
-                        <li class="nav-item dropdown align-self-end ms-2 d-none d-md-inline">
-                            <a class="nav-link dropdown-toggle align-self-end" href="#" id="navbarDarkDropdownMenuLink"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Språk
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
-                                    navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
-                                <li><a class="dropdown-item" href="#english">English</a></li>
-                                <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- main -->
-
-        <section id="intro">
-            <div class="container-lg">
-                <div class="row justify-content-center align-items-lg-center">
-                    <div class="col-md-5 text-center text-md-start intro-text">
-                        <h1>
-                            <div class="display-3" style="color: rgb(159, 139, 212);">Viktor Rådbreg</div>
-                            <h3 class="text-muted ms-4">.NET-utvecklare</h3>
-                            <h5 class="text-muted ms-4 pb-3">IT-Högskolan</h5>
-                        </h1>
-                        <!-- <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </p> -->
-                        <!-- <a href="#button" class="btn btn-secondary btn-lg">button</a> -->
-                    </div>
-                    <div class="col-md-5 text-center d-none d-md-block">
-                        <img class="img-fluid" src="headshot.png" alt="headshot" id="headshot">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container-lg">
-                <div class="row justify-content-center align-items-lg-start">
-                    <div class="col-md-10 text-start text-md-start content-text">
-                        <h1>
-                            <div class="display-6 text-muted">Arbetserfarenhet</div>
-                        </h1>
-                        <p class="lead my-3 text-muted">
-                            Oj här har jag inte skrivit in något än, men jag har
-                            <a href="https://www.linkedin.com/in/viktor-r%C3%A5dberg-09221b80/"> LinkedIn</a>!
-                        </p>
-                        <h1>
-                            <div class="display-6 text-muted">Utbildning och kompetenser</div>
-                        </h1>
-                        <p class="lead mt-3 text-muted">
-                            <b>Univseritetsstudier</b>
-                        </p>
-                        <p class="my-3 text-muted">
-                            Göteborgs Universitet: Kandidatexamen i Japansk kultur och språk (2021).
-                            <br>
-                            <a href="https://gupea.ub.gu.se/handle/2077/69415">KANJILÄROMATERIAL SETT FRÅN ETT
-                                SJÄLVSTUDIEPERSPEKTIV</a>
-                        </p>
-                        <p class="lead mt-3 text-muted">
-                            <b>Övrigt</b>
-                        </p>
-                        <p class="my-3 text-muted">
-                            Osaka University (Japan): Ett års utbytesstudier inom deras Maple-program (2020)
-                        </p>
-                        <p class="lead mt-3 text-muted">
-                            <b>Språk</b>
-                        </p>
-                        <ul class="my-3 text-muted">
-                            <li>Svenska: Flytande i tal och skrift (Modersmål) </li>
-                            <li>Engelska: Bra i tal, flytande i skrift. </li>
-                            <li>Japanska: Avancerad nivå. (Mellan JLPT N1 och N2.)</li>
+                            <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
+                            <li><a class="dropdown-item" href="#english">English</a></li>
+                            <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
                         </ul>
-                        <p class="lead mt-3 text-muted">
-                            <b>Körkort</b>
-                        </p>
-                        <p class="my-3 text-muted">
-                            B - Dock ej tillgång till bil
-                        </p>
-                    </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-end" id="main-nav">
+                <ul class="navbar-nav">
+                    <!-- Doesn't show up in toggle button menu -->
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="#kontaktform" class="btn btn-secondary">Kontakt</a>
+                    </li>
+                    <li class="nav-item dropdown align-self-end ms-2 d-none d-md-inline">
+                        <a class="nav-link dropdown-toggle align-self-end" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Språk
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
+                                    navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
+                            <li><a class="dropdown-item" href="#english">English</a></li>
+                            <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-lg-center">
+                <div class="col-md-5 text-center text-md-start intro-text">
+                    <h1>
+                        <div class="display-3" style="color: rgb(159, 139, 212);">Viktor Rådbreg</div>
+                        <h3 class="text-muted ms-4">.NET-utvecklare</h3>
+                        <h5 class="text-muted ms-4 pb-3">IT-Högskolan</h5>
+                    </h1>
+                    <!-- <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p> -->
+                    <!-- <a href="#button" class="btn btn-secondary btn-lg">button</a> -->
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <img class="img-fluid" src="headshot.png" alt="headshot" id="headshot">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-lg-start">
+                <div class="col-md-10 text-start text-md-start content-text">
+                    <h1>
+                        <div class="display-6 text-muted">Arbetserfarenhet</div>
+                    </h1>
+                    <p class="lead my-3 text-muted">
+                        Oj här har jag inte skrivit in något än, men jag har
+                        <a href="https://www.linkedin.com/in/viktor-r%C3%A5dberg-09221b80/"> LinkedIn</a>!
+                    </p>
+                    <h1>
+                        <div class="display-6 text-muted">Utbildning och kompetenser</div>
+                    </h1>
+                    <p class="lead mt-3 text-muted">
+                        <b>Univseritetsstudier</b>
+                    </p>
+                    <p class="my-3 text-muted">
+                        Göteborgs Universitet: Kandidatexamen i Japansk kultur och språk (2021).
+                        <br>
+                        <a href="https://gupea.ub.gu.se/handle/2077/69415">KANJILÄROMATERIAL SETT FRÅN ETT
+                            SJÄLVSTUDIEPERSPEKTIV</a>
+                    </p>
+                    <p class="lead mt-3 text-muted">
+                        <b>Övrigt</b>
+                    </p>
+                    <p class="my-3 text-muted">
+                        Osaka University (Japan): Ett års utbytesstudier inom deras Maple-program (2020)
+                    </p>
+                    <p class="lead mt-3 text-muted">
+                        <b>Språk</b>
+                    </p>
+                    <ul class="my-3 text-muted">
+                        <li>Svenska: Flytande i tal och skrift (Modersmål) </li>
+                        <li>Engelska: Bra i tal, flytande i skrift. </li>
+                        <li>Japanska: Avancerad nivå. (Mellan JLPT N1 och N2.)</li>
+                    </ul>
+                    <p class="lead mt-3 text-muted">
+                        <b>Körkort</b>
+                    </p>
+                    <p class="my-3 text-muted">
+                        B - Dock ej tillgång till bil
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
 
-        <!-- <h1>Viktor Rådberg</h1>
+    <!-- <h1>Viktor Rådberg</h1>
         
             <button class="btn btn-warning">btn-warning</button>
         
@@ -182,99 +167,10 @@
             </div> -->
 
 
-        <script type="module" src="./index.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-    </body>
-
-    </html>
-    <main>
-
-        <div id="curve"></div>
-        <img id="headshot" src="headshot.png">
-        <h1 id="name">Viktor Rådberg</h1>
-
-        <div id="menu">
-            <a class="menuItems" href="index.html">Hem</a>
-            <a class="menuItems active" href="about.html">Om</a>
-            <a class="menuItems" href="achievements.html">Framgångar</a>
-        </div>
-
-        <div id="languageMenu">
-            <a class="languageMenuItems active" href="svenska">Svenska</a>
-            <a class="languageMenuItems" href="english">English</a>
-            <a class="languageMenuItems" href="nihongo">日本語</a>
-        </div>
-
-
-        <div id="content">
-            <p style="text-align: justify;">
-            <h3>Arbetserfarenhet</h3>
-            </p>
-            Oj här har jag inte skrivit in något än, men jag har
-            <a href="https://www.linkedin.com/in/viktor-r%C3%A5dberg-09221b80/">LinkedIn</a>!
-            <p>
-            <h3>Utbildning och kompetenser</h3>
-            <b><u>Univseritetsstudier</u></b>
-            <br>
-            Göteborgs Universitet: Kandidatexamen i Japansk kultur och språk (2021).
-            <br>
-            <a href="https://gupea.ub.gu.se/handle/2077/69415">KANJILÄROMATERIAL SETT FRÅN ETT SJÄLVSTUDIEPERSPEKTIV</a>
-            <br>
-            <br>
-            <b><u>Övrigt</u></b>
-            <br>
-            Osaka University (Japan): Ett års utbytesstudier inom deras Maple-program (2020)
-            <br>
-            <br>
-            <b><u>Språk</u></b>
-            <ul>
-                <li>Svenska: Flytande i tal och skrift (Modersmål) </li>
-                <li>Engelska: Bra i tal, flytande i skrift. </li>
-                <li>Japanska: Avancerad nivå. (Mellan JLPT N1 och N2.)</li>
-            </ul>
-            <b><u>Körkort</u></b>
-            <br>B - Dock ej tillgång till bil
-            </p>
-        </div>
-
-        <footer>
-            <div id="infobar">
-                <text id="infotext">
-                    Contact info: Viktor Rådberg ｜ +46(0)70-684 02 92 ｜
-                    viktor.radberg@iths.se
-                </text>
-
-                <!-- <table>
-                                    <thead>
-                                        <td>Contact info</td>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Namn:</td>
-                                            <td>Viktor Rådberg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Adress:</td>
-                                            <td>Lillatorpsgatan 2D, lgh 1023, 41655 GÖTEBORG</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telefon:</td>
-                                            <td>+46(0)70-684 02 92</td>
-                                        </tr>
-                                        <tr>
-                                            <td>E-mail:</td>
-                                            <td>thevikeo@gmail.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table> -->
-            </div>
-        </footer>
-    </main>
-
     <script type="module" src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 </body>
 
