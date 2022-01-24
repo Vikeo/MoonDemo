@@ -1,15 +1,20 @@
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: azure;
   margin-top: 60px;
   background-color: black;
 }
 
 body {
   background-color: black;
+}
+
+#bg {
+  z-index: -2;
+}
+
+section {
+  padding: 2em 0%;
 }
 
 canvas {
@@ -19,27 +24,14 @@ canvas {
   background-color: black;
 }
 
-main {
-  position: absolute;
-  color: white;
-  text-shadow: 2px;
+.intro-text {
+  background: rgba(30, 16, 68, 0.575);
+  border-radius: 25px;
 }
 
-body {
-  /* background-color: #bcd2ee; */
-  color: white;
-  font-family: consolas;
-}
-
-table {
-  position: absolute;
-  top: 0%;
-  right: 0%;
-}
-
-thead {
-  color: #5b3e3b;
-  font-weight: 100;
+.content-text {
+  background: rgba(30, 16, 68, 0.575);
+  border-radius: 25px;
 }
 
 /* #curve {
@@ -55,75 +47,8 @@ thead {
 
 #headshot {
   position: relative;
-  border-top-left-radius: 40%;
-  border-top-right-radius: 40%;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 10%;
-}
-
-#infobar {
-  background-color: #89abd8a4;
-  position: fixed;
-  padding: 0px 10px 0px 10px;
-  bottom: 0%;
-  left: 0%;
-  width: auto;
-}
-
-#content {
-  position: relative;
-  top: 30%;
-}
-
-#menu {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: auto;
-  justify-content: left;
-  align-items: center;
-  background-color: #98bdec;
-  margin-left: 200px;
-}
-
-.menuItems {
-  font-size: 20px;
-  margin: 10px;
-  text-decoration: none;
-}
-
-#languageMenu {
-  font-family: monospace;
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  width: auto;
-  justify-content: right;
-  align-items: center;
-  background-color: #98bceca9;
-  padding: 0px 5px 0px 5px;
-  overflow: hidden;
-}
-
-.languageMenuItems {
-  font-size: 1em;
-  margin: 5px;
-  text-decoration: none;
-}
-
-#name {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  margin-top: 60px;
-  margin-left: 205px;
-}
-
-.active {
-  text-decoration: underline;
-  /* background-color: #82b0ec; */
 }

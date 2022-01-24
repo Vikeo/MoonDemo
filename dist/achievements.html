@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Viktor Moon</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -13,43 +15,125 @@
 
     <canvas id="bg"></canvas>
 
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-xxl">
+            <a href="index.html" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    Viktor Rådberg
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <main>
+            <!-- navbar links -->
 
-        <div id="curve"></div>
-        <img id="headshot" src="headshot.png">
-        <h1 id="name">Viktor Rådberg</h1>
-
-        <div id="menu">
-            <a class="menuItems" href="index.html">Hem</a>
-            <a class="menuItems" href="about.html">Om</a>
-            <a class="menuItems active" href="achievements.html">Framgångar</a>
-        </div>
-
-        <div id="languageMenu">
-            <a class="languageMenuItems active" href="svenska">Svenska</a>
-            <a class="languageMenuItems" href="english">English</a>
-            <a class="languageMenuItems" href="nihongo">日本語</a>
-        </div>
-
-        <div id="content">
-            <p style="text-align: justify;">
-            <h3>Framgångar</h3>
-            </p>
-            <p>Oj här var det visst tomt...</p>
-        </div>
-
-        <footer>
-            <div id="infobar">
-                <text id="infotext">
-                    Contact info: Viktor Rådberg ｜ +46(0)70-684 02 92 ｜
-                    viktor.radberg@iths.se
-                </text>
+            <div class="collapse navbar-collapse justify-content-start align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Om</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="achievements.html" class="nav-link">Framgångar</a>
+                    </li>
+                    <!-- Shows up in toggle button menu -->
+                    <li class="nav-item d-md-none">
+                        <a href="#kontaktform" class="nav-link">Kontakt</a>
+                    </li>
+                    <li class="nav-item dropdown d-md-none">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Språk
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
+                                                        navbarDarkDropdownMenuLink" style="max-width:min-content;">
+                            <li><a class="dropdown-item" href="#svenska">Svenska</a></li>
+                            <li><a class="dropdown-item" href="#english">English</a></li>
+                            <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </footer>
-    </main>
+
+            <div class="collapse navbar-collapse justify-content-end" id="main-nav">
+                <ul class="navbar-nav">
+                    <!-- Doesn't show up in toggle button menu -->
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="#kontaktform" class="btn btn-secondary">Kontakt</a>
+                    </li>
+                    <li class="nav-item dropdown align-self-end ms-2 d-none d-md-inline">
+                        <a class="nav-link dropdown-toggle align-self-end" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Språk
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
+                                    navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
+                            <li><a class="dropdown-item" href="#english">English</a></li>
+                            <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+
+    <!-- <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-lg-center">
+                <div class="col-md-5 text-center text-md-start intro-text">
+                    <h1>
+                        <div class="display-3" style="color: rgb(159, 139, 212);">Viktor Rådbreg</div>
+                        <h3 class="text-muted ms-4">.NET-utvecklare</h3>
+                        <h5 class="text-muted ms-4 pb-3">IT-Högskolan</h5>
+                    </h1>
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <img class="img-fluid" src="headshot.png" alt="headshot" id="headshot">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section>
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-lg-start">
+                <div class="col-md-10 text-start text-md-start content-text">
+                    <h1>
+                        <div class="display-6 text-muted">Framgångar</div>
+                    </h1>
+                    <p class="lead my-3 text-muted">
+                        Här händer inte så mycket än, men du kan kolla runt så länge om du vill!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- <h1>Viktor Rådberg</h1>
+        
+            <button class="btn btn-warning">btn-warning</button>
+        
+            <a href="#" class="btn btn-dark">aaa</a>
+        
+            <div class="container my-5">
+                <h2>normal container</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, quae. Iste eveniet voluptas amet nemo.
+                    Deserunt, voluptas officiis quo nam minima vel iusto suscipit mollitia obcaecati labore cumque voluptates
+                    officia.</p>
+            </div> -->
+
 
     <script type="module" src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 </body>
 
