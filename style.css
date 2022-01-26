@@ -34,6 +34,15 @@ canvas {
   border-radius: 25px;
 }
 
+.button-background {
+  background: rgba(43, 23, 97, 0.692);
+  color: rgb(133, 133, 133);
+}
+.button-background:hover {
+  background: rgba(60, 33, 136, 0.699);
+  color: #b5b5b5;
+}
+
 /* #curve {
   background-color: #4358c2;
   height: 100%;
