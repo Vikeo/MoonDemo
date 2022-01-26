@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-xxl">
-            <a href="index.html" class="navbar-brand">
+            <a href="#nojump" class="navbar-brand" onclick="navigateToIndex()">
                 <span class="fw-bold text-secondary">
                     Viktor Rådberg
                 </span>
@@ -34,10 +34,10 @@
             <div class="collapse navbar-collapse justify-content-start align-center" id="main-nav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">Om</a>
+                        <a href="#nojump" class="nav-link" onclick="navigateToAbout()">Om</a>
                     </li>
                     <li class="nav-item">
-                        <a href="achievements.html" class="nav-link">Framgångar</a>
+                        <a href="#nojump" class="nav-link" onclick="navigateToAchievements()">Framgångar</a>
                     </li>
                     <!-- Shows up in toggle button menu -->
                     <li class="nav-item d-md-none">
@@ -49,7 +49,7 @@
                             Språk
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
-                                                        navbarDarkDropdownMenuLink" style="max-width:min-content;">
+                                                            navbarDarkDropdownMenuLink" style="max-width:min-content;">
                             <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
                             <li><a class="dropdown-item" href="#english">English</a></li>
                             <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
@@ -62,7 +62,7 @@
                 <ul class="navbar-nav">
                     <!-- Doesn't show up in toggle button menu -->
                     <li class="nav-item ms-2 d-none d-md-inline">
-                        <a href="#kontaktform" class="btn btn-secondary">Kontakt</a>
+                        <a href="#kontaktform" class="btn button-background">Kontakt</a>
                     </li>
                     <li class="nav-item dropdown align-self-end ms-2 d-none d-md-inline">
                         <a class="nav-link dropdown-toggle align-self-end" href="#" id="navbarDarkDropdownMenuLink"
@@ -70,7 +70,7 @@
                             Språk
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="
-                                    navbarDarkDropdownMenuLink">
+                                        navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item active" href="#svenska">Svenska</a></li>
                             <li><a class="dropdown-item" href="#english">English</a></li>
                             <li><a class="dropdown-item" href="#nihongo">日本語</a></li>
@@ -83,57 +83,63 @@
 
     <!-- main -->
 
-    <section id="intro">
-        <div class="container-lg">
-            <div class="row justify-content-center align-items-lg-center">
-                <div class="col-md-5 text-center text-md-start intro-text">
-                    <h1>
-                        <div class="display-3" style="color: rgb(159, 139, 212);">Viktor Rådberg</div>
-                        <h3 class="text-muted ms-4">.NET-utvecklare</h3>
-                        <h5 class="text-muted ms-4 pb-3">IT-Högskolan</h5>
-                    </h1>
-                    <!-- <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p> -->
-                    <!-- <a href="#button" class="btn btn-secondary btn-lg">button</a> -->
-                </div>
-                <div class="col-md-5 text-center d-none d-md-block">
-                    <img class="img-fluid" src="headshot.png" alt="headshot" id="headshot">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="main">
 
-    <section>
-        <div class="container-lg">
-            <div class="row justify-content-center align-items-lg-start">
-                <div class="col-md-10 text-start text-md-start content-text">
-                    <h1>
-                        <div class="display-6 text-muted">Välkommen!</div>
-                    </h1>
-                    <p class="lead my-3 text-muted">
-                        Här händer inte så mycket än, men du kan kolla runt så länge om du vill!
-                    </p>
+
+        <section id="intro">
+            <div class="container-lg">
+                <div class="row justify-content-center align-items-lg-center">
+                    <div class="col-md-5 text-center text-md-start intro-text">
+                        <h1>
+                            <div class="display-3" style="color: rgb(159, 139, 212);">Viktor Rådberg</div>
+                            <h3 class="text-muted ms-4">.NET-utvecklare</h3>
+                            <h5 class="text-muted ms-4 pb-3">IT-Högskolan</h5>
+                        </h1>
+                        <!-- <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p> -->
+                        <!-- <a href="#button" class="btn btn-secondary btn-lg">button</a> -->
+                    </div>
+                    <div class="col-md-5 text-center d-none d-md-block">
+                        <img class="img-fluid" src="headshot.png" alt="headshot" id="headshot">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section>
+            <div class="container-lg">
+                <div class="row justify-content-center align-items-lg-start">
+                    <div class="col-md-10 text-start text-md-start content-text">
+                        <h1>
+                            <div class="display-6 text-muted">Välkommen!</div>
+                        </h1>
+                        <p class="lead my-3 text-muted">
+                            Här händer inte så mycket än, men du kan kolla runt så länge om du vill!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
-    <!-- <h1>Viktor Rådberg</h1>
-        
-            <button class="btn btn-warning">btn-warning</button>
-        
-            <a href="#" class="btn btn-dark">aaa</a>
-        
-            <div class="container my-5">
-                <h2>normal container</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, quae. Iste eveniet voluptas amet nemo.
-                    Deserunt, voluptas officiis quo nam minima vel iusto suscipit mollitia obcaecati labore cumque voluptates
-                    officia.</p>
-            </div> -->
+        <!-- <h1>Viktor Rådberg</h1>
+            
+                <button class="btn btn-warning">btn-warning</button>
+            
+                <a href="#" class="btn btn-dark">aaa</a>
+            
+                <div class="container my-5">
+                    <h2>normal container</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, quae. Iste eveniet voluptas amet nemo.
+                        Deserunt, voluptas officiis quo nam minima vel iusto suscipit mollitia obcaecati labore cumque voluptates
+                        officia.</p>
+                </div> -->
+
+    </div>
 
     <script type="module" src="./index.js"></script>
+    <script src="./pages.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
